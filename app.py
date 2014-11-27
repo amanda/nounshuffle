@@ -33,9 +33,9 @@ def shuffle_nouns(text):
 	random.shuffle(extra_nouns)
 	for index in noun_indices:
 		if nouns:
-			tokens[index] = nouns.pop()
-		else:
-			tokens[index] = extra_nouns.pop()
+			tokens[index] = nouns[random.randint(0, len(nouns) - 1)]
+		elif extra_nouns:
+			tokens[index] = extra_nouns[random.randint(0, len(nouns) - 1)]
 	return (' '.join(tokens)).lower()
 
 @app.route('/', methods=['GET', 'POST'])
