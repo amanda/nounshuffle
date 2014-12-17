@@ -1,17 +1,12 @@
 from flask import Flask, render_template, request, redirect
 from textblob import TextBlob
-from textblob.taggers import NLTKTagger
 import random
 import os
-import nltk
-
-nltk.data.path.append('./nltk_data/')
 
 app = Flask(__name__)
 
 def make_pos_dict(text):
-	nltk_tagger = NLTKTagger()
-	blob = TextBlob(text, pos_tagger=nltk_tagger)
+	blob = TextBlob(text)
 	pos_words = dict(blob.pos_tags)
 	return pos_words
 
