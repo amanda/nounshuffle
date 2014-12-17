@@ -38,17 +38,17 @@ def shuffle_nouns(text):
 			tokens[index] = extra_nouns[random.randint(0, len(nouns) - 1)]
 	return (' '.join(tokens)).lower()
 
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/', methods=['GET'])
 def index():
 	if request.method == 'GET':
 		return render_template('index.html')
 	else:
 		return redirect('/result')
 
-@app.route('/result', methods=['GET', 'POST'])
+@app.route('/result', methods=['POST'])
 def result():
 	user_text = request.form['user_text']
-	new_text = shuffle_nouns(user_text)
+	new_text = shuffle_nouns(user_text) #todo: unicode errors :'(
 	return render_template('index.html', shuffled=new_text)
 
 if __name__ == '__main__':
