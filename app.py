@@ -4,6 +4,8 @@ from textblob.taggers import NLTKTagger
 import random
 import os
 
+nltk.data.path.append('./nltk_data/')
+
 app = Flask(__name__)
 
 def make_pos_dict(text):
