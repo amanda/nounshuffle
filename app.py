@@ -3,6 +3,7 @@ from textblob import TextBlob
 from textblob.taggers import NLTKTagger
 import random
 import os
+import nltk
 
 nltk.data.path.append('./nltk_data/')
 
