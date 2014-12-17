@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, redirect
 from textblob import TextBlob
 from textblob.taggers import NLTKTagger
 import random
+import os
 
 app = Flask(__name__)
 
@@ -38,7 +39,7 @@ def shuffle_nouns(text):
 			tokens[index] = extra_nouns[random.randint(0, len(nouns) - 1)]
 	return (' '.join(tokens)).lower()
 
-@app.route('/', methods=['GET'])
+@app.route('/', methods=['GET', 'POST'])
 def index():
 	if request.method == 'GET':
 		return render_template('index.html')
