@@ -12,6 +12,7 @@ play with it here: https://nounshuffle.herokuapp.com/
 
 ## todo
 
-1. allow users to save text (locally or to a db)
-2. allow users to post to twitter? (deal with character limit)
-3. add verb/adjective shuffling abilities
+1. AJAX
+2. add verb/adj shuffling ability
+3. allow users to save text (locally or to a db)
+4. allow users to post to twitter? (deal with character limit)
